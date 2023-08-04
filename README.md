@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2023-08-02 14:03:09
- * @LastEditTime: 2023-08-04 16:10:49
+ * @LastEditTime: 2023-08-04 16:13:42
  * @Description:
  * @LastEditors: luyao
  * @FilePath: /dbs-table/README.md
@@ -25,11 +25,61 @@ npm i dbs-table  -D
 
 // main.js 引入
 
-import dbsTable from "dbsTable";
+import dbsTable from "dbs-table";
 
 let app = createApp(App);
 app.use(dbsTable);
 app.mount("#app");
+
+
+
+<script setup lang="ts">
+const tableData = [
+  {
+    date: "2016-05-03",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-02",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-04",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-01",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+];
+
+let columns = [
+  {
+    title: "date",
+    key: "date",
+    minWidth: 80,
+  },
+  {
+    title: "name",
+    key: "name",
+    minWidth: 80,
+  },
+  {
+    title: "address",
+    key: "address",
+    minWidth: 80,
+  },
+];
+</script>
+
+<template>
+  <dbsTable :data="tableData" :columns="columns" />
+</template>
+
 
 ```
 

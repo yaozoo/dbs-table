@@ -37103,6 +37103,7 @@ var DM = {
 const PM = { class: "PublicTable" }, RM = /* @__PURE__ */ Ae({
   __name: "dbsTable",
   props: {
+    // 表格名称
     tableName: {
       type: String
     },
@@ -37111,28 +37112,32 @@ const PM = { class: "PublicTable" }, RM = /* @__PURE__ */ Ae({
       type: Array,
       default: () => []
     },
+    // 数据
     data: {
       type: Array,
-      // 后台数据
       default: () => []
     },
+    // 总条数
     totalNum: {
       type: Number,
       default: () => 0
     },
+    //当前页
     pageNum: {
       type: Number,
       default: () => 1
     },
+    // 每页数量
     pageSize: {
       type: Number,
       default: () => 20
     },
+    // 是否开启loading
     loading: {
       type: Boolean
     },
+    //其他table配置依次添加
     configFlag: {
-      // 配置  其他table配置依次添加
       type: Object,
       default: () => ({
         needPage: !0,
@@ -37173,6 +37178,7 @@ const PM = { class: "PublicTable" }, RM = /* @__PURE__ */ Ae({
       type: String
       // default: () => "100%",
     },
+    // header头部单元格样式
     headerCellStyle: {
       type: Object,
       default: () => ({
@@ -37180,6 +37186,7 @@ const PM = { class: "PublicTable" }, RM = /* @__PURE__ */ Ae({
         backgroundColor: "#999"
       })
     },
+    // body单元格样式
     cellStyle: {
       type: Function || Object,
       default: () => ({
@@ -37188,14 +37195,17 @@ const PM = { class: "PublicTable" }, RM = /* @__PURE__ */ Ae({
         // lineHeight: "18px",
       })
     },
+    // 行是否高亮
     highlightCurrentRow: {
       type: Boolean,
       default: !0
     },
+    // 选中函数
     selecTableFun: {
       type: Function,
       default: () => !0
     },
+    // 单元格点击函数
     objectSpanMethod: {
       type: Function,
       default: () => !0
@@ -37208,17 +37218,21 @@ const PM = { class: "PublicTable" }, RM = /* @__PURE__ */ Ae({
       type: String,
       default: () => ""
     },
+    // table class
     tableRowClassName: {
       type: Function
     },
+    // 是否开启拖拽行为
     dragRow: {
       type: Boolean,
       default: !1
     },
+    // 自定义行class
     cusClass: {
       type: String,
       default: () => ""
     },
+    // 拖拽句柄
     dragBtn: {
       type: String,
       default: () => ""
@@ -37421,7 +37435,7 @@ const NM = (e, t) => {
   for (const [n, a] of t)
     r[n] = a;
   return r;
-}, LM = /* @__PURE__ */ NM(RM, [["__scopeId", "data-v-0176586f"]]), BM = {
+}, LM = /* @__PURE__ */ NM(RM, [["__scopeId", "data-v-15e147af"]]), BM = {
   install: (e) => {
     e.component("dbsTable", LM);
   }
