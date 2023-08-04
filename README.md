@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2023-08-02 14:03:09
- * @LastEditTime: 2023-08-04 15:38:13
+ * @LastEditTime: 2023-08-04 16:10:49
  * @Description:
  * @LastEditors: luyao
  * @FilePath: /dbs-table/README.md
@@ -10,6 +10,28 @@
 # dbs-table
 
 基于 vue3+elementPlus 二次开发的表格（实际项目中用了两年半了）
+
+### 环境
+
+```
+vue3 、 elementPlus
+```
+
+### 使用说明
+
+```
+// 安装依赖
+npm i dbs-table  -D
+
+// main.js 引入
+
+import dbsTable from "dbsTable";
+
+let app = createApp(App);
+app.use(dbsTable);
+app.mount("#app");
+
+```
 
 # 组件名称
 

@@ -1,7 +1,6 @@
 {
-  "name": "dbsTable",
-  "private": true,
-  "version": "0.0.0",
+  "name": "dbs-table",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/dbsTable.umd.cjs",
   "module": "./dist/dbsTable.js",
