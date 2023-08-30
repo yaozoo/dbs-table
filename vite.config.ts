@@ -1,10 +1,10 @@
 /*
  * @Author: luyao
  * @Date: 2023-08-02 14:03:09
- * @LastEditTime: 2023-08-04 14:40:21
+ * @LastEditTime: 2023-08-30 15:43:43
  * @Description:
  * @LastEditors: luyao
- * @FilePath: /dbsTable/vite.config.ts
+ * @FilePath: /dbs-table/vite.config.ts
  */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -23,12 +23,12 @@ export default defineConfig({
     // commonjs({ requireReturnsDefault: true }),
     libCss(),
     basicSsl(),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
+    // AutoImport({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
+    // Components({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
   ],
   resolve: {
     alias: {
