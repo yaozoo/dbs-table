@@ -1,7 +1,7 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-04-07 10:32:08
- * @LastEditTime: 2023-11-03 11:33:18
+ * @LastEditTime: 2023-11-03 11:43:13
  * @LastEditors: luyao
  * @Description: 
  * @FilePath: /dbs-table/src/views/dbsTable/dbsTable.vue
@@ -125,17 +125,17 @@ let props = defineProps({
   },
   // 总条数
   totalNum: {
-    type: Number,
+    type: Number || String,
     default: () => 0,
   },
   //当前页
   pageNum: {
-    type: Number,
+    type: Number || String,
     default: () => 1,
   },
   // 每页数量
   pageSize: {
-    type: Number,
+    type: Number || String,
     default: () => 20,
   },
   // 是否开启loading
