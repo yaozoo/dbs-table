@@ -1,10 +1,10 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-04-07 10:32:08
- * @LastEditTime: 2023-08-04 15:05:42
+ * @LastEditTime: 2023-11-03 11:33:18
  * @LastEditors: luyao
  * @Description: 
- * @FilePath: /dbsTable/src/views/dbsTable/dbsTable.vue
+ * @FilePath: /dbs-table/src/views/dbsTable/dbsTable.vue
 -->
 
 <template>
@@ -34,7 +34,8 @@
         :span-method="objectSpanMethod"
         :row-class-name="tableRowClassName"
         :row-key="rowKey"
-        @header-contextmenu="handleRightClick">
+        @header-contextmenu="handleRightClick"
+      >
         <!--    :key="key" -->
         <!-- 全选单选 -->
         <!--  :align="configFlag.tableAlign" -->
@@ -44,7 +45,8 @@
           width="40"
           type="selection"
           label="Selection"
-          fixed="left" />
+          fixed="left"
+        />
         <!-- 序号列 -->
         <!--  :align="configFlag.tableAlign" -->
         <el-table-column
@@ -52,14 +54,16 @@
           width="35"
           type="index"
           :index="1"
-          :label="(!!configFlag.indexName && configFlag.indexName) || '序号'" />
+          :label="(!!configFlag.indexName && configFlag.indexName) || '序号'"
+        />
 
         <!-- 循环遍历表头展示数据 -->
         <!-- v-for="item in col" :key="item.label" :col="item" -->
         <ColumnItem
           v-for="(item, columnIndex) in columns"
           :item="item"
-          :columnIndex="columnIndex.toString()">
+          :columnIndex="columnIndex.toString()"
+        >
           <template v-for="slot in Object.keys(slots)" #[slot]="scope">
             <slot :name="slot" v-bind="scope"></slot>
           </template>
@@ -72,20 +76,22 @@
         background
         class="el-pagination"
         v-if="needPage"
-        :total="totalNum"
-        :current-page="pageNum"
+        :total="Number(totalNum)"
+        :current-page="Number(pageNum)"
         :page-sizes="[10, 20, 30, 50, 100, 500]"
-        :page-size="pageSize"
+        :page-size="Number(pageSize)"
         layout="total,sizes, prev, pager, next"
         @size-change="sizeChange"
         @current-change="currentChange"
-        small />
+        small
+      />
 
       <div
         v-if="contextMenuVisible"
         class="context-menu"
         v-has-authority="'upload_excel'"
-        :style="contextMenuStyle">
+        :style="contextMenuStyle"
+      >
         <div class="context-menu-option" @click="exportExcelFun">
           导出为excel
         </div>
