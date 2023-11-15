@@ -1,7 +1,7 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-04-07 10:32:08
- * @LastEditTime: 2023-11-03 11:43:13
+ * @LastEditTime: 2023-11-14 16:21:31
  * @LastEditors: luyao
  * @Description: 
  * @FilePath: /dbs-table/src/views/dbsTable/dbsTable.vue
@@ -35,6 +35,8 @@
         :row-class-name="tableRowClassName"
         :row-key="rowKey"
         @header-contextmenu="handleRightClick"
+        @select="select"
+        @select-all="selectAll"
       >
         <!--    :key="key" -->
         <!-- 全选单选 -->
@@ -275,6 +277,8 @@ let emit = defineEmits([
   "cellClick",
   "rowDblclick",
   "dragChangeData",
+  "selectAll",
+  "select",
 ]);
 
 const tableRef: any = ref(null);
@@ -315,6 +319,15 @@ function cellClickFun(row: any, column: any) {
 function rowDblclickFun(row: any, column: any, event: any) {
   emit("rowDblclick", row, column, event);
 }
+
+function select(selection: any, row: any) {
+  emit("select", selection, row);
+}
+
+function selectAll(selection: any) {
+  emit("selectAll", selection);
+}
+
 function setHeight() {
   setTimeout(() => {
     let dom = document.querySelector(".dbs-table");
