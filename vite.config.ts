@@ -1,11 +1,3 @@
-/*
- * @Author: luyao
- * @Date: 2023-08-02 14:03:09
- * @LastEditTime: 2023-08-30 15:43:43
- * @Description:
- * @LastEditors: luyao
- * @FilePath: /dbs-table/vite.config.ts
- */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";

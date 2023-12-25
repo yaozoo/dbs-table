@@ -1,12 +1,3 @@
-<!--
- * @Author: luyao
- * @Date: 2023-08-02 14:03:09
- * @LastEditTime: 2023-08-04 16:13:42
- * @Description:
- * @LastEditors: luyao
- * @FilePath: /dbs-table/README.md
--->
-
 # dbs-table
 
 基于 vue3+elementPlus 二次开发的表格（实际项目中用了两年半了）

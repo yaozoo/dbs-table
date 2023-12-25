@@ -1,12 +1,3 @@
-<!--
- * @Author: 鲁遥
- * @Date: 2021-04-07 10:32:08
- * @LastEditTime: 2023-11-14 16:21:31
- * @LastEditors: luyao
- * @Description: 
- * @FilePath: /dbs-table/src/views/dbsTable/dbsTable.vue
--->
-
 <template>
   <el-config-provider :locale="zhCn">
     <div class="PublicTable">

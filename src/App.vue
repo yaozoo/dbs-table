@@ -1,11 +1,3 @@
-<!--
- * @Author: luyao
- * @Date: 2023-08-02 14:03:09
- * @LastEditTime: 2023-08-04 15:33:40
- * @Description: 
- * @LastEditors: luyao
- * @FilePath: /dbsTable/src/App.vue
--->
 <script setup lang="ts">
 import dbsTable from "./views/dbsTable/dbsTable.vue";
 const tableData = [

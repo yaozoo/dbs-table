@@ -1,15 +1,7 @@
-<!--
- * @Author: luyao
- * @Date: 2022-06-08 15:48:23
- * @LastEditTime: 2023-04-11 17:13:00
- * @Description: 
- * @LastEditors: luyao
- * @FilePath: /dmd-pc/src/components/dbsTable/columnItem.vue
--->
 <template>
   <el-table-column
     :show-overflow-tooltip="item.tooltip || false"
-    :key="item.key"
+    :key="item.cusKey || item.key"
     :width="item.width || ''"
     :height="item.height || ''"
     :max-height="item.maxHeight || ''"
@@ -24,12 +16,14 @@
     v-if="
       (item.hasOwnProperty('show') && !!item.show) ||
       !item.hasOwnProperty('show')
-    ">
+    "
+  >
     <template v-if="!!item.children" v-for="(inItem, inIndex) of item.children">
       <ColumnItem
         v-if="item.children"
         :item="inItem"
-        :columnIndex="`${columnIndex}-${inIndex}`">
+        :columnIndex="`${columnIndex}-${inIndex}`"
+      >
         <template v-for="slot in Object.keys(slots)" #[slot]="scope">
           <slot :name="slot" v-bind="scope" />
         </template>
@@ -41,7 +35,8 @@
         :class="item.className"
         v-if="item.slot"
         :name="item.slot"
-        :scope="scope" />
+        :scope="scope"
+      />
       <div v-else-if="!item.render">
         <span :class="item.className">{{ scope.row[item.key] }} </span>
       </div>
@@ -53,7 +48,8 @@
           :column="item"
           :row="scope.row"
           :render="item.render"
-          :index="Number(columnIndex)" />
+          :index="Number(columnIndex)"
+        />
       </div>
     </template>
   </el-table-column>
